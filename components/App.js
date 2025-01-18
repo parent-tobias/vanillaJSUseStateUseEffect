@@ -1,6 +1,7 @@
 import { toHTML } from '../tools/toHTML.js';
 import VanillaHooks from '../tools/vanillaHooks.js';
 import Counter from './Counter.js'
+
 const { useState, useEffect } = VanillaHooks;
 
 const App = () => {
@@ -15,7 +16,7 @@ const App = () => {
     <div class='count-container'>
     </div>
     <div>word is ${word}</div>`);
-    
+
   domEl.querySelector(".count-container").append(Counter(count, countSetter).render() )
 
     return domEl;
