@@ -1,8 +1,7 @@
-const VanillaHooks = (()=>{
   let global = {};
   let index = 0;
 
-  const render = (Component, DOMRoot) => {
+  export const render = (Component, DOMRoot) => {
     global.DOMRoot = DOMRoot;
     global.Component = Component;
     const instance = Component();
@@ -13,7 +12,7 @@ const VanillaHooks = (()=>{
     return global;
   }
 
-  const useState = (initialValue) => {
+  export const useState = (initialValue) => {
     if(!global){
       throw new Error("Need a global storage");
     }
@@ -37,7 +36,7 @@ const VanillaHooks = (()=>{
     return [currentState, setState]
   }
 
-  const useEffect = (fn, dependencyArr=[])=>{
+  export const useEffect = (fn, dependencyArr=[])=>{
     const hooks = global.hooks;
 
     // getting older dependencies from the hooks
@@ -57,8 +56,3 @@ const VanillaHooks = (()=>{
     hooks[index] = dependencyArr;
     index += 1;
   }
-
-  return { render, useState, useEffect}
-})()
-
-export default VanillaHooks;

@@ -6,6 +6,8 @@ Over the last few years, there have been folks who have asked me (and interviews
 
 While I implemented an IIFE (a *module pattern*) in `vanillaHooks.js`, it isn't really necessary - as that file is imported it is already an ES6 module, with its own closed scope. And when that file is imported, any top-level code will be parsed and evaluated when the module is imported, which is pretty much exactly what we get from an IIFE. I had implemented this in replit originally, in a single file, so having the IIFE was useful, but in this context it doesn't actually matter.
 
+**\[EDIT\]** I've removed the IIFE, and reworked the `App.js` and `index.js` to use the ES6 module's named exports directly. Minimal changes, simply removed the IIFE wrapping those methods and properties, and changed the import lines.
+
 The point here is, when we do this line:
 
 ```js

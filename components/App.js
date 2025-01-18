@@ -1,8 +1,6 @@
 import { toHTML } from '../tools/toHTML.js';
-import VanillaHooks from '../tools/vanillaHooks.js';
+import { useState, useEffect } from '../tools/vanillaHooks.js';
 import Counter from './Counter.js'
-
-const { useState, useEffect } = VanillaHooks;
 
 const App = () => {
   const [count, setCount] = useState(0);
