@@ -9,5 +9,5 @@ const global = render(App, document.querySelector("#root"));
 // global.instance.countSetter();
 // global.instance.countSetter();
 // global.instance.countSetter();
-// global.instance.wordSetter('Yooo!');
+ global.instance.wordSetter('Yooo!');
 // global.instance.wordSetter('Sup foo!');
